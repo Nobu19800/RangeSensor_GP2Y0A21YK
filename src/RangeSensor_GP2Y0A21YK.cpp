@@ -114,6 +114,16 @@ RTC::ReturnCode_t RangeSensor_GP2Y0A21YK::onActivated(RTC::UniqueId ec_id)
 		rangeSensor = new GP2Y0A21YK(response, m_pin);
 		if(response != MRAA_SUCCESS)
 		{
+			delete rangeSensor;
+			rangeSensor = NULL;
+			return RTC::RTC_ERROR;
+		}
+	}
+	else
+	{
+		response = rangeSensor->setPinNum(m_pin);
+		if(response != MRAA_SUCCESS)
+		{
 			return RTC::RTC_ERROR;
 		}
 	}
