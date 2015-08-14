@@ -29,8 +29,9 @@ static const char* rangesensor_gp2y0a21yk_spec[] =
     // Configuration variables
     "conf.default.pin", "2",
     // Widget
-    "conf.__widget__.pin", "text",
+    "conf.__widget__.pin", "radio",
     // Constraints
+    "conf.__constraints__.pin", "(0,1,2,3)",
     ""
   };
 // </rtc-template>
