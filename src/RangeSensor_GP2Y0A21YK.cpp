@@ -144,6 +144,7 @@ RTC::ReturnCode_t RangeSensor_GP2Y0A21YK::onExecute(RTC::UniqueId ec_id)
 	if(rangeSensor)
 	{
 		m_out.data = rangeSensor->getDistance();
+		setTimestamp(m_out);
 		m_outOut.write();
 	}
   return RTC::RTC_OK;
